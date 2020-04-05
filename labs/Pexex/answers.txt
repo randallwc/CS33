@@ -1,0 +1,78 @@
+1.	Explain why the instructions in the trace did not produce 
+the correct mathematical result. Which instructions caused the 
+problem, exactly?
+
+The correct answer of -1844255039 * 1250284240 should be -2305843009802285360 but
+the command emacs -Q -batch -eval '(print (* 1250284240 -1844255039))' gives 
+2305843008625102544 because there is overflow due to the answer of the multiply
+of the two numbers being moved from memory to a register that gives an incorrect result.  The line
+
+54dcfc	48 8d 04 ad 02 00 00 00	lea 0x2(,%rbp,4),%rax
+
+is where the truncation of the correct answer happens.  
+
+This answer is incorrectly generated because of how Emacs stores the numbers.
+It converts everything to an object of 64 bits and the top 2 bits are unaccessable
+and used as a tag.  This is called ELISPOBJECT.  These 62 bits of data are then 
+right shifted by 2.  This is done with sar $0x2,%rdi then it is multiplied.  The lea
+here left shifts back after the right shift, so information is lost due to it getting
+converted to an ELISPOBJECT for the two bits of tags.  This causes the overflow and
+the returning of the incorrect values.
+
+2.	Explain why the shell command 
+emacs -Q -batch -eval '(print most-negative-fixnum)' outputs -2305843009213693952. 
+Where did the number come from? 
+Explain in terms of the Emacs source code.
+
+This number came from the ~/emacs-26.3/src/data.c file.  It is defined as "The smallest value that is representable in a Lisp integer."
+
+//code in data.c//
+  DEFVAR_LISP ("most-negative-fixnum", Vmost_negative_fixnum,
+	       doc: /* The smallest value that is representable in a Lisp integer.
+This variable cannot be set; trying to do so will signal an error.  */);
+  Vmost_negative_fixnum = make_number (MOST_NEGATIVE_FIXNUM);
+  make_symbol_constant (intern_c_string ("most-negative-fixnum"));
+ ////////////////
+
+ this code refrences MOST_NEGATIVE_FIXNUM which is in lisp.h
+
+ //code in lisp.h//
+#define MOST_NEGATIVE_FIXNUM (-1 - MOST_POSITIVE_FIXNUM)
+ //////////////////
+
+This code shows that MOST_NEGATIVE_FIXNUM is defined to be -1 - MOST_POSITIVE_FIXNUM and
+MOST_POSITIVE_FIXNUM is defined right above to be
+
+ //code in lisp.h//
+#define MOST_POSITIVE_FIXNUM (EMACS_INT_MAX >> INTTYPEBITS)
+ //////////////////
+
+This final bit of code shows that to get the most positive fixnum you must
+right shift EMACS_INT_MAX by INTTYPEBITS, which is the bits needed for the 
+tag, or 2. This means that the value of MOST_NEGATIVE_FIXNUM is
+
+-1 - ((2^63-1) >> 2) = -2305843009213693952 = 0xE000000000000000
+
+
+3.	Explain why the shell command 
+emacs -Q -batch -eval '(print (* most-positive-fixnum most-positive-fixnum most-positive-fixnum most-positive-fixnum))' 
+outputs only 1.
+
+First, most-positive-fixnum is 0x1FFFFFFFFFFFFFFF.  This command is like taking 0x1FFFFFFFFFFFFFFF and multiplying it by 
+itslef 4 times, or doing 0x1FFFFFFFFFFFFFFF to the 4th power.
+
+we can see that when most-positive-fixnum is multiplied by itself it makes the bit pattern 0x3ffffffffffffffc000000000000001
+this overflows and results in 0x0...01 and then this result is multiplied again by most-positive-fixnum twice which results
+in the same ammount of 0x0...01.
+
+
+4.	The Emacs executable was compiled with GCC's -O2 option. 
+Suppose it had also been compiled with -fwrapv. Explain any 
+problems Emacs would run into, or if there would not be a 
+problem explain why not.
+
+If this was compiled with -fwrapv then the code will wrap araound and still result in the incorrect
+values.  This would bring problems of the number's overflowing and wrapping instead of just taking 
+the bottom bits of the operation and then truncating the higher order bits.
+
+

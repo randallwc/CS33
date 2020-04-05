@@ -1,0 +1,68 @@
+commands:
+
+1. gdb ~eggert/bin64/bin/emacs-26.3
+
+This command opened emacs 26.3 in gdb where I could debug the machine level and 
+assembly code.
+
+2. (gdb)layout commands
+
+layout regs, layout asm, layout next
+
+These commmands in gdb allowed me to have a textual user interface (tui) in gdb.
+This interface showed me the assembly code, source code, breakpoints, and registers.
+It allowed me to visually move through the file and better understand how the data
+was managed.
+
+3. breaks
+
+b Ftimes
+info break
+b 2952
+
+These example break commands allowed me to run the program until it hit a stopping point
+and it would allow me to see where I am in the program.  It also helped me not make a trace 
+file that was extraordinarially long because it would stop before going to the next function
+call.
+
+4. 'set disassemble-next-line on' and 'set logging on'
+
+This command allowed me to output what I did to a file so I could make a file that included
+the assembly code, the machine code, and the address of each instruction.  This made making
+the trace file much easier.
+
+5. (gdb) run
+
+run -Q -batch -eval '(print (* 1250284240 -1844255039))'
+
+This instruction in gdb would run the program so I could debug it.
+
+6. stepi or si
+
+This instruction would step through each machine code instruction
+
+7. nexti or ni
+
+This instruction would go to the next machine code instruction
+
+8. (gdb)Cntrl+L
+
+This keystroke combination would reload the gdb tui so that I wouldn't have to restart every
+time I got a graphical bug.
+
+9. p/x (address) and info registers
+
+This allowed me to print the value or the hex representation of each register so I could keep
+track of what changed and when.
+
+
+Things that didn't work or were confusing:
+
+1. It took a while to get used to gdb and the commands associated with it and the layouts.
+2. In gdb I would have trouble understanding the layouts of gdb and I would end up writing
+down the register changes for the past instruction
+3. Finding where to stop the trace file was difficult until I figured out that the Ftimes
+function only called one function and that when it returned I could stop copying the trace file.
+4. Using the next and step instructions without the i.  This was difficult to understand, but once 
+I realized that those instructions weren't stepping one by one through the assembly it became much easier.
+

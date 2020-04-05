@@ -1,0 +1,660 @@
+0x000000000054ddd3	2950	  return arith_driver (Amult, nargs, args);
+   0x000000000054ddd0 <Ftimes+0>:	48 89 f2	mov    %rsi,%rdx
+=> 0x000000000054ddd3 <Ftimes+3>:	48 89 fe	mov    %rdi,%rsi
+   0x000000000054ddd6 <Ftimes+6>:	bf 02 00 00 00	mov    $0x2,%edi
+   0x000000000054dddb <Ftimes+11>:	e9 a0 fd ff ff	jmpq   0x54db80 <arith_driver>
+0x000000000054ddd6	2950	  return arith_driver (Amult, nargs, args);
+   0x000000000054ddd0 <Ftimes+0>:	48 89 f2	mov    %rsi,%rdx
+   0x000000000054ddd3 <Ftimes+3>:	48 89 fe	mov    %rdi,%rsi
+=> 0x000000000054ddd6 <Ftimes+6>:	bf 02 00 00 00	mov    $0x2,%edi
+   0x000000000054dddb <Ftimes+11>:	e9 a0 fd ff ff	jmpq   0x54db80 <arith_driver>
+0x000000000054dddb	2950	  return arith_driver (Amult, nargs, args);
+   0x000000000054ddd0 <Ftimes+0>:	48 89 f2	mov    %rsi,%rdx
+   0x000000000054ddd3 <Ftimes+3>:	48 89 fe	mov    %rdi,%rsi
+   0x000000000054ddd6 <Ftimes+6>:	bf 02 00 00 00	mov    $0x2,%edi
+=> 0x000000000054dddb <Ftimes+11>:	e9 a0 fd ff ff	jmpq   0x54db80 <arith_driver>
+arith_driver (code=Amult, nargs=2, args=0x7fffffffc720) at ../../emacs-26.3/src/data.c:2791
+2791	  switch (code)
+=> 0x000000000054db80 <arith_driver+0>:	41 57	push   %r15
+   0x000000000054db82 <arith_driver+2>:	41 56	push   %r14
+   0x000000000054db84 <arith_driver+4>:	49 89 d6	mov    %rdx,%r14
+   0x000000000054db87 <arith_driver+7>:	41 55	push   %r13
+   0x000000000054db89 <arith_driver+9>:	41 54	push   %r12
+   0x000000000054db8b <arith_driver+11>:	41 89 fc	mov    %edi,%r12d
+   0x000000000054db8e <arith_driver+14>:	55	push   %rbp
+   0x000000000054db8f <arith_driver+15>:	53	push   %rbx
+   0x000000000054db90 <arith_driver+16>:	48 83 ec 18	sub    $0x18,%rsp
+   0x000000000054db94 <arith_driver+20>:	83 ff 03	cmp    $0x3,%edi
+   0x000000000054db97 <arith_driver+23>:	0f 86 bb 00 00 00	jbe    0x54dc58 <arith_driver+216>
+   0x000000000054db9d <arith_driver+29>:	31 ff	xor    %edi,%edi
+   0x000000000054db9f <arith_driver+31>:	41 83 fc 04	cmp    $0x4,%r12d
+   0x000000000054dba3 <arith_driver+35>:	40 0f 94 c7	sete   %dil
+   0x000000000054dba7 <arith_driver+39>:	48 f7 df	neg    %rdi
+   0x000000000054dbaa <arith_driver+42>:	48 89 fd	mov    %rdi,%rbp
+0x000000000054db82	2791	  switch (code)
+   0x000000000054db80 <arith_driver+0>:	41 57	push   %r15
+=> 0x000000000054db82 <arith_driver+2>:	41 56	push   %r14
+   0x000000000054db84 <arith_driver+4>:	49 89 d6	mov    %rdx,%r14
+   0x000000000054db87 <arith_driver+7>:	41 55	push   %r13
+   0x000000000054db89 <arith_driver+9>:	41 54	push   %r12
+   0x000000000054db8b <arith_driver+11>:	41 89 fc	mov    %edi,%r12d
+   0x000000000054db8e <arith_driver+14>:	55	push   %rbp
+   0x000000000054db8f <arith_driver+15>:	53	push   %rbx
+   0x000000000054db90 <arith_driver+16>:	48 83 ec 18	sub    $0x18,%rsp
+   0x000000000054db94 <arith_driver+20>:	83 ff 03	cmp    $0x3,%edi
+   0x000000000054db97 <arith_driver+23>:	0f 86 bb 00 00 00	jbe    0x54dc58 <arith_driver+216>
+   0x000000000054db9d <arith_driver+29>:	31 ff	xor    %edi,%edi
+   0x000000000054db9f <arith_driver+31>:	41 83 fc 04	cmp    $0x4,%r12d
+   0x000000000054dba3 <arith_driver+35>:	40 0f 94 c7	sete   %dil
+   0x000000000054dba7 <arith_driver+39>:	48 f7 df	neg    %rdi
+   0x000000000054dbaa <arith_driver+42>:	48 89 fd	mov    %rdi,%rbp
+0x000000000054db84	2791	  switch (code)
+   0x000000000054db80 <arith_driver+0>:	41 57	push   %r15
+   0x000000000054db82 <arith_driver+2>:	41 56	push   %r14
+=> 0x000000000054db84 <arith_driver+4>:	49 89 d6	mov    %rdx,%r14
+   0x000000000054db87 <arith_driver+7>:	41 55	push   %r13
+   0x000000000054db89 <arith_driver+9>:	41 54	push   %r12
+   0x000000000054db8b <arith_driver+11>:	41 89 fc	mov    %edi,%r12d
+   0x000000000054db8e <arith_driver+14>:	55	push   %rbp
+   0x000000000054db8f <arith_driver+15>:	53	push   %rbx
+   0x000000000054db90 <arith_driver+16>:	48 83 ec 18	sub    $0x18,%rsp
+   0x000000000054db94 <arith_driver+20>:	83 ff 03	cmp    $0x3,%edi
+   0x000000000054db97 <arith_driver+23>:	0f 86 bb 00 00 00	jbe    0x54dc58 <arith_driver+216>
+   0x000000000054db9d <arith_driver+29>:	31 ff	xor    %edi,%edi
+   0x000000000054db9f <arith_driver+31>:	41 83 fc 04	cmp    $0x4,%r12d
+   0x000000000054dba3 <arith_driver+35>:	40 0f 94 c7	sete   %dil
+   0x000000000054dba7 <arith_driver+39>:	48 f7 df	neg    %rdi
+   0x000000000054dbaa <arith_driver+42>:	48 89 fd	mov    %rdi,%rbp
+0x000000000054db87	2791	  switch (code)
+   0x000000000054db80 <arith_driver+0>:	41 57	push   %r15
+   0x000000000054db82 <arith_driver+2>:	41 56	push   %r14
+   0x000000000054db84 <arith_driver+4>:	49 89 d6	mov    %rdx,%r14
+=> 0x000000000054db87 <arith_driver+7>:	41 55	push   %r13
+   0x000000000054db89 <arith_driver+9>:	41 54	push   %r12
+   0x000000000054db8b <arith_driver+11>:	41 89 fc	mov    %edi,%r12d
+   0x000000000054db8e <arith_driver+14>:	55	push   %rbp
+   0x000000000054db8f <arith_driver+15>:	53	push   %rbx
+   0x000000000054db90 <arith_driver+16>:	48 83 ec 18	sub    $0x18,%rsp
+   0x000000000054db94 <arith_driver+20>:	83 ff 03	cmp    $0x3,%edi
+   0x000000000054db97 <arith_driver+23>:	0f 86 bb 00 00 00	jbe    0x54dc58 <arith_driver+216>
+   0x000000000054db9d <arith_driver+29>:	31 ff	xor    %edi,%edi
+   0x000000000054db9f <arith_driver+31>:	41 83 fc 04	cmp    $0x4,%r12d
+   0x000000000054dba3 <arith_driver+35>:	40 0f 94 c7	sete   %dil
+   0x000000000054dba7 <arith_driver+39>:	48 f7 df	neg    %rdi
+   0x000000000054dbaa <arith_driver+42>:	48 89 fd	mov    %rdi,%rbp
+0x000000000054db89	2791	  switch (code)
+   0x000000000054db80 <arith_driver+0>:	41 57	push   %r15
+   0x000000000054db82 <arith_driver+2>:	41 56	push   %r14
+   0x000000000054db84 <arith_driver+4>:	49 89 d6	mov    %rdx,%r14
+   0x000000000054db87 <arith_driver+7>:	41 55	push   %r13
+=> 0x000000000054db89 <arith_driver+9>:	41 54	push   %r12
+   0x000000000054db8b <arith_driver+11>:	41 89 fc	mov    %edi,%r12d
+   0x000000000054db8e <arith_driver+14>:	55	push   %rbp
+   0x000000000054db8f <arith_driver+15>:	53	push   %rbx
+   0x000000000054db90 <arith_driver+16>:	48 83 ec 18	sub    $0x18,%rsp
+   0x000000000054db94 <arith_driver+20>:	83 ff 03	cmp    $0x3,%edi
+   0x000000000054db97 <arith_driver+23>:	0f 86 bb 00 00 00	jbe    0x54dc58 <arith_driver+216>
+   0x000000000054db9d <arith_driver+29>:	31 ff	xor    %edi,%edi
+   0x000000000054db9f <arith_driver+31>:	41 83 fc 04	cmp    $0x4,%r12d
+   0x000000000054dba3 <arith_driver+35>:	40 0f 94 c7	sete   %dil
+   0x000000000054dba7 <arith_driver+39>:	48 f7 df	neg    %rdi
+   0x000000000054dbaa <arith_driver+42>:	48 89 fd	mov    %rdi,%rbp
+0x000000000054db8b	2791	  switch (code)
+   0x000000000054db80 <arith_driver+0>:	41 57	push   %r15
+   0x000000000054db82 <arith_driver+2>:	41 56	push   %r14
+   0x000000000054db84 <arith_driver+4>:	49 89 d6	mov    %rdx,%r14
+   0x000000000054db87 <arith_driver+7>:	41 55	push   %r13
+   0x000000000054db89 <arith_driver+9>:	41 54	push   %r12
+=> 0x000000000054db8b <arith_driver+11>:	41 89 fc	mov    %edi,%r12d
+   0x000000000054db8e <arith_driver+14>:	55	push   %rbp
+   0x000000000054db8f <arith_driver+15>:	53	push   %rbx
+   0x000000000054db90 <arith_driver+16>:	48 83 ec 18	sub    $0x18,%rsp
+   0x000000000054db94 <arith_driver+20>:	83 ff 03	cmp    $0x3,%edi
+   0x000000000054db97 <arith_driver+23>:	0f 86 bb 00 00 00	jbe    0x54dc58 <arith_driver+216>
+   0x000000000054db9d <arith_driver+29>:	31 ff	xor    %edi,%edi
+   0x000000000054db9f <arith_driver+31>:	41 83 fc 04	cmp    $0x4,%r12d
+   0x000000000054dba3 <arith_driver+35>:	40 0f 94 c7	sete   %dil
+   0x000000000054dba7 <arith_driver+39>:	48 f7 df	neg    %rdi
+   0x000000000054dbaa <arith_driver+42>:	48 89 fd	mov    %rdi,%rbp
+0x000000000054db8e	2791	  switch (code)
+   0x000000000054db80 <arith_driver+0>:	41 57	push   %r15
+   0x000000000054db82 <arith_driver+2>:	41 56	push   %r14
+   0x000000000054db84 <arith_driver+4>:	49 89 d6	mov    %rdx,%r14
+   0x000000000054db87 <arith_driver+7>:	41 55	push   %r13
+   0x000000000054db89 <arith_driver+9>:	41 54	push   %r12
+   0x000000000054db8b <arith_driver+11>:	41 89 fc	mov    %edi,%r12d
+=> 0x000000000054db8e <arith_driver+14>:	55	push   %rbp
+   0x000000000054db8f <arith_driver+15>:	53	push   %rbx
+   0x000000000054db90 <arith_driver+16>:	48 83 ec 18	sub    $0x18,%rsp
+   0x000000000054db94 <arith_driver+20>:	83 ff 03	cmp    $0x3,%edi
+   0x000000000054db97 <arith_driver+23>:	0f 86 bb 00 00 00	jbe    0x54dc58 <arith_driver+216>
+   0x000000000054db9d <arith_driver+29>:	31 ff	xor    %edi,%edi
+   0x000000000054db9f <arith_driver+31>:	41 83 fc 04	cmp    $0x4,%r12d
+   0x000000000054dba3 <arith_driver+35>:	40 0f 94 c7	sete   %dil
+   0x000000000054dba7 <arith_driver+39>:	48 f7 df	neg    %rdi
+   0x000000000054dbaa <arith_driver+42>:	48 89 fd	mov    %rdi,%rbp
+0x000000000054db8f	2791	  switch (code)
+   0x000000000054db80 <arith_driver+0>:	41 57	push   %r15
+   0x000000000054db82 <arith_driver+2>:	41 56	push   %r14
+   0x000000000054db84 <arith_driver+4>:	49 89 d6	mov    %rdx,%r14
+   0x000000000054db87 <arith_driver+7>:	41 55	push   %r13
+   0x000000000054db89 <arith_driver+9>:	41 54	push   %r12
+   0x000000000054db8b <arith_driver+11>:	41 89 fc	mov    %edi,%r12d
+   0x000000000054db8e <arith_driver+14>:	55	push   %rbp
+=> 0x000000000054db8f <arith_driver+15>:	53	push   %rbx
+   0x000000000054db90 <arith_driver+16>:	48 83 ec 18	sub    $0x18,%rsp
+   0x000000000054db94 <arith_driver+20>:	83 ff 03	cmp    $0x3,%edi
+   0x000000000054db97 <arith_driver+23>:	0f 86 bb 00 00 00	jbe    0x54dc58 <arith_driver+216>
+   0x000000000054db9d <arith_driver+29>:	31 ff	xor    %edi,%edi
+   0x000000000054db9f <arith_driver+31>:	41 83 fc 04	cmp    $0x4,%r12d
+   0x000000000054dba3 <arith_driver+35>:	40 0f 94 c7	sete   %dil
+   0x000000000054dba7 <arith_driver+39>:	48 f7 df	neg    %rdi
+   0x000000000054dbaa <arith_driver+42>:	48 89 fd	mov    %rdi,%rbp
+0x000000000054db90	2791	  switch (code)
+   0x000000000054db80 <arith_driver+0>:	41 57	push   %r15
+   0x000000000054db82 <arith_driver+2>:	41 56	push   %r14
+   0x000000000054db84 <arith_driver+4>:	49 89 d6	mov    %rdx,%r14
+   0x000000000054db87 <arith_driver+7>:	41 55	push   %r13
+   0x000000000054db89 <arith_driver+9>:	41 54	push   %r12
+   0x000000000054db8b <arith_driver+11>:	41 89 fc	mov    %edi,%r12d
+   0x000000000054db8e <arith_driver+14>:	55	push   %rbp
+   0x000000000054db8f <arith_driver+15>:	53	push   %rbx
+=> 0x000000000054db90 <arith_driver+16>:	48 83 ec 18	sub    $0x18,%rsp
+   0x000000000054db94 <arith_driver+20>:	83 ff 03	cmp    $0x3,%edi
+   0x000000000054db97 <arith_driver+23>:	0f 86 bb 00 00 00	jbe    0x54dc58 <arith_driver+216>
+   0x000000000054db9d <arith_driver+29>:	31 ff	xor    %edi,%edi
+   0x000000000054db9f <arith_driver+31>:	41 83 fc 04	cmp    $0x4,%r12d
+   0x000000000054dba3 <arith_driver+35>:	40 0f 94 c7	sete   %dil
+   0x000000000054dba7 <arith_driver+39>:	48 f7 df	neg    %rdi
+   0x000000000054dbaa <arith_driver+42>:	48 89 fd	mov    %rdi,%rbp
+0x000000000054db94	2791	  switch (code)
+   0x000000000054db80 <arith_driver+0>:	41 57	push   %r15
+   0x000000000054db82 <arith_driver+2>:	41 56	push   %r14
+   0x000000000054db84 <arith_driver+4>:	49 89 d6	mov    %rdx,%r14
+   0x000000000054db87 <arith_driver+7>:	41 55	push   %r13
+   0x000000000054db89 <arith_driver+9>:	41 54	push   %r12
+   0x000000000054db8b <arith_driver+11>:	41 89 fc	mov    %edi,%r12d
+   0x000000000054db8e <arith_driver+14>:	55	push   %rbp
+   0x000000000054db8f <arith_driver+15>:	53	push   %rbx
+   0x000000000054db90 <arith_driver+16>:	48 83 ec 18	sub    $0x18,%rsp
+=> 0x000000000054db94 <arith_driver+20>:	83 ff 03	cmp    $0x3,%edi
+   0x000000000054db97 <arith_driver+23>:	0f 86 bb 00 00 00	jbe    0x54dc58 <arith_driver+216>
+   0x000000000054db9d <arith_driver+29>:	31 ff	xor    %edi,%edi
+   0x000000000054db9f <arith_driver+31>:	41 83 fc 04	cmp    $0x4,%r12d
+   0x000000000054dba3 <arith_driver+35>:	40 0f 94 c7	sete   %dil
+   0x000000000054dba7 <arith_driver+39>:	48 f7 df	neg    %rdi
+   0x000000000054dbaa <arith_driver+42>:	48 89 fd	mov    %rdi,%rbp
+0x000000000054db97	2791	  switch (code)
+   0x000000000054db80 <arith_driver+0>:	41 57	push   %r15
+   0x000000000054db82 <arith_driver+2>:	41 56	push   %r14
+   0x000000000054db84 <arith_driver+4>:	49 89 d6	mov    %rdx,%r14
+   0x000000000054db87 <arith_driver+7>:	41 55	push   %r13
+   0x000000000054db89 <arith_driver+9>:	41 54	push   %r12
+   0x000000000054db8b <arith_driver+11>:	41 89 fc	mov    %edi,%r12d
+   0x000000000054db8e <arith_driver+14>:	55	push   %rbp
+   0x000000000054db8f <arith_driver+15>:	53	push   %rbx
+   0x000000000054db90 <arith_driver+16>:	48 83 ec 18	sub    $0x18,%rsp
+   0x000000000054db94 <arith_driver+20>:	83 ff 03	cmp    $0x3,%edi
+=> 0x000000000054db97 <arith_driver+23>:	0f 86 bb 00 00 00	jbe    0x54dc58 <arith_driver+216>
+   0x000000000054db9d <arith_driver+29>:	31 ff	xor    %edi,%edi
+   0x000000000054db9f <arith_driver+31>:	41 83 fc 04	cmp    $0x4,%r12d
+   0x000000000054dba3 <arith_driver+35>:	40 0f 94 c7	sete   %dil
+   0x000000000054dba7 <arith_driver+39>:	48 f7 df	neg    %rdi
+   0x000000000054dbaa <arith_driver+42>:	48 89 fd	mov    %rdi,%rbp
+0x000000000054dc58	2751	  return INTEGERP (x) || FLOATP (x);
+   0x000000000054dc48 <arith_driver+200>:	83 e2 03	and    $0x3,%edx
+   0x000000000054dc4b <arith_driver+203>:	83 fa 02	cmp    $0x2,%edx
+   0x000000000054dc4e <arith_driver+206>:	74 cd	je     0x54dc1d <arith_driver+157>
+   0x000000000054dc50 <arith_driver+208>:	eb 90	jmp    0x54dbe2 <arith_driver+98>
+   0x000000000054dc52 <arith_driver+210>:	66 0f 1f 44 00 00	nopw   0x0(%rax,%rax,1)
+=> 0x000000000054dc58 <arith_driver+216>:	31 ed	xor    %ebp,%ebp
+   0x000000000054dc5a <arith_driver+218>:	83 ff 01	cmp    $0x1,%edi
+   0x000000000054dc5d <arith_driver+221>:	40 0f 97 c5	seta   %bpl
+   0x000000000054dc61 <arith_driver+225>:	e9 47 ff ff ff	jmpq   0x54dbad <arith_driver+45>
+   0x000000000054dc66 <arith_driver+230>:	66 2e 0f 1f 84 00 00 00 00 00	nopw   %cs:0x0(%rax,%rax,1)
+0x000000000054dc5a	2751	  return INTEGERP (x) || FLOATP (x);
+   0x000000000054dc48 <arith_driver+200>:	83 e2 03	and    $0x3,%edx
+   0x000000000054dc4b <arith_driver+203>:	83 fa 02	cmp    $0x2,%edx
+   0x000000000054dc4e <arith_driver+206>:	74 cd	je     0x54dc1d <arith_driver+157>
+   0x000000000054dc50 <arith_driver+208>:	eb 90	jmp    0x54dbe2 <arith_driver+98>
+   0x000000000054dc52 <arith_driver+210>:	66 0f 1f 44 00 00	nopw   0x0(%rax,%rax,1)
+   0x000000000054dc58 <arith_driver+216>:	31 ed	xor    %ebp,%ebp
+=> 0x000000000054dc5a <arith_driver+218>:	83 ff 01	cmp    $0x1,%edi
+   0x000000000054dc5d <arith_driver+221>:	40 0f 97 c5	seta   %bpl
+   0x000000000054dc61 <arith_driver+225>:	e9 47 ff ff ff	jmpq   0x54dbad <arith_driver+45>
+   0x000000000054dc66 <arith_driver+230>:	66 2e 0f 1f 84 00 00 00 00 00	nopw   %cs:0x0(%rax,%rax,1)
+0x000000000054dc5d	2751	  return INTEGERP (x) || FLOATP (x);
+   0x000000000054dc48 <arith_driver+200>:	83 e2 03	and    $0x3,%edx
+   0x000000000054dc4b <arith_driver+203>:	83 fa 02	cmp    $0x2,%edx
+   0x000000000054dc4e <arith_driver+206>:	74 cd	je     0x54dc1d <arith_driver+157>
+   0x000000000054dc50 <arith_driver+208>:	eb 90	jmp    0x54dbe2 <arith_driver+98>
+   0x000000000054dc52 <arith_driver+210>:	66 0f 1f 44 00 00	nopw   0x0(%rax,%rax,1)
+   0x000000000054dc58 <arith_driver+216>:	31 ed	xor    %ebp,%ebp
+   0x000000000054dc5a <arith_driver+218>:	83 ff 01	cmp    $0x1,%edi
+=> 0x000000000054dc5d <arith_driver+221>:	40 0f 97 c5	seta   %bpl
+   0x000000000054dc61 <arith_driver+225>:	e9 47 ff ff ff	jmpq   0x54dbad <arith_driver+45>
+   0x000000000054dc66 <arith_driver+230>:	66 2e 0f 1f 84 00 00 00 00 00	nopw   %cs:0x0(%rax,%rax,1)
+0x000000000054dc61	2751	  return INTEGERP (x) || FLOATP (x);
+   0x000000000054dc48 <arith_driver+200>:	83 e2 03	and    $0x3,%edx
+   0x000000000054dc4b <arith_driver+203>:	83 fa 02	cmp    $0x2,%edx
+   0x000000000054dc4e <arith_driver+206>:	74 cd	je     0x54dc1d <arith_driver+157>
+   0x000000000054dc50 <arith_driver+208>:	eb 90	jmp    0x54dbe2 <arith_driver+98>
+   0x000000000054dc52 <arith_driver+210>:	66 0f 1f 44 00 00	nopw   0x0(%rax,%rax,1)
+   0x000000000054dc58 <arith_driver+216>:	31 ed	xor    %ebp,%ebp
+   0x000000000054dc5a <arith_driver+218>:	83 ff 01	cmp    $0x1,%edi
+   0x000000000054dc5d <arith_driver+221>:	40 0f 97 c5	seta   %bpl
+=> 0x000000000054dc61 <arith_driver+225>:	e9 47 ff ff ff	jmpq   0x54dbad <arith_driver+45>
+   0x000000000054dc66 <arith_driver+230>:	66 2e 0f 1f 84 00 00 00 00 00	nopw   %cs:0x0(%rax,%rax,1)
+2810	  for (argnum = 0; argnum < nargs; argnum++)
+=> 0x000000000054dbad <arith_driver+45>:	48 85 f6	test   %rsi,%rsi
+   0x000000000054dbb0 <arith_driver+48>:	0f 8e 46 01 00 00	jle    0x54dcfc <arith_driver+380>
+   0x000000000054dbb6 <arith_driver+54>:	48 89 e9	mov    %rbp,%rcx
+   0x000000000054dbb9 <arith_driver+57>:	31 db	xor    %ebx,%ebx
+   0x000000000054dbbb <arith_driver+59>:	45 31 ff	xor    %r15d,%r15d
+   0x000000000054dbbe <arith_driver+62>:	45 31 ed	xor    %r13d,%r13d
+0x000000000054dbb0	2810	  for (argnum = 0; argnum < nargs; argnum++)
+   0x000000000054dbad <arith_driver+45>:	48 85 f6	test   %rsi,%rsi
+=> 0x000000000054dbb0 <arith_driver+48>:	0f 8e 46 01 00 00	jle    0x54dcfc <arith_driver+380>
+   0x000000000054dbb6 <arith_driver+54>:	48 89 e9	mov    %rbp,%rcx
+   0x000000000054dbb9 <arith_driver+57>:	31 db	xor    %ebx,%ebx
+   0x000000000054dbbb <arith_driver+59>:	45 31 ff	xor    %r15d,%r15d
+   0x000000000054dbbe <arith_driver+62>:	45 31 ed	xor    %r13d,%r13d
+0x000000000054dbb6	2810	  for (argnum = 0; argnum < nargs; argnum++)
+   0x000000000054dbad <arith_driver+45>:	48 85 f6	test   %rsi,%rsi
+   0x000000000054dbb0 <arith_driver+48>:	0f 8e 46 01 00 00	jle    0x54dcfc <arith_driver+380>
+=> 0x000000000054dbb6 <arith_driver+54>:	48 89 e9	mov    %rbp,%rcx
+   0x000000000054dbb9 <arith_driver+57>:	31 db	xor    %ebx,%ebx
+   0x000000000054dbbb <arith_driver+59>:	45 31 ff	xor    %r15d,%r15d
+   0x000000000054dbbe <arith_driver+62>:	45 31 ed	xor    %r13d,%r13d
+0x000000000054dbb9	2810	  for (argnum = 0; argnum < nargs; argnum++)
+   0x000000000054dbad <arith_driver+45>:	48 85 f6	test   %rsi,%rsi
+   0x000000000054dbb0 <arith_driver+48>:	0f 8e 46 01 00 00	jle    0x54dcfc <arith_driver+380>
+   0x000000000054dbb6 <arith_driver+54>:	48 89 e9	mov    %rbp,%rcx
+=> 0x000000000054dbb9 <arith_driver+57>:	31 db	xor    %ebx,%ebx
+   0x000000000054dbbb <arith_driver+59>:	45 31 ff	xor    %r15d,%r15d
+   0x000000000054dbbe <arith_driver+62>:	45 31 ed	xor    %r13d,%r13d
+0x000000000054dbbb	2810	  for (argnum = 0; argnum < nargs; argnum++)
+   0x000000000054dbad <arith_driver+45>:	48 85 f6	test   %rsi,%rsi
+   0x000000000054dbb0 <arith_driver+48>:	0f 8e 46 01 00 00	jle    0x54dcfc <arith_driver+380>
+   0x000000000054dbb6 <arith_driver+54>:	48 89 e9	mov    %rbp,%rcx
+   0x000000000054dbb9 <arith_driver+57>:	31 db	xor    %ebx,%ebx
+=> 0x000000000054dbbb <arith_driver+59>:	45 31 ff	xor    %r15d,%r15d
+   0x000000000054dbbe <arith_driver+62>:	45 31 ed	xor    %r13d,%r13d
+0x000000000054dbbe	2810	  for (argnum = 0; argnum < nargs; argnum++)
+   0x000000000054dbad <arith_driver+45>:	48 85 f6	test   %rsi,%rsi
+   0x000000000054dbb0 <arith_driver+48>:	0f 8e 46 01 00 00	jle    0x54dcfc <arith_driver+380>
+   0x000000000054dbb6 <arith_driver+54>:	48 89 e9	mov    %rbp,%rcx
+   0x000000000054dbb9 <arith_driver+57>:	31 db	xor    %ebx,%ebx
+   0x000000000054dbbb <arith_driver+59>:	45 31 ff	xor    %r15d,%r15d
+=> 0x000000000054dbbe <arith_driver+62>:	45 31 ed	xor    %r13d,%r13d
+2819	      val = args[argnum];
+=> 0x000000000054dbc1 <arith_driver+65>:	49 8b 3c de	mov    (%r14,%rbx,8),%rdi
+XTYPE (a=5001136962) at ../../emacs-26.3/src/lisp.h:2505
+2505	  return lisp_h_MARKERP (x);
+=> 0x000000000054dbc5 <arith_driver+69>:	89 f8	mov    %edi,%eax
+   0x000000000054dbc7 <arith_driver+71>:	89 fa	mov    %edi,%edx
+   0x000000000054dbc9 <arith_driver+73>:	83 e0 07	and    $0x7,%eax
+   0x000000000054dbcc <arith_driver+76>:	83 f8 01	cmp    $0x1,%eax
+   0x000000000054dbcf <arith_driver+79>:	74 6f	je     0x54dc40 <arith_driver+192>
+0x000000000054dbc7	2505	  return lisp_h_MARKERP (x);
+   0x000000000054dbc5 <arith_driver+69>:	89 f8	mov    %edi,%eax
+=> 0x000000000054dbc7 <arith_driver+71>:	89 fa	mov    %edi,%edx
+   0x000000000054dbc9 <arith_driver+73>:	83 e0 07	and    $0x7,%eax
+   0x000000000054dbcc <arith_driver+76>:	83 f8 01	cmp    $0x1,%eax
+   0x000000000054dbcf <arith_driver+79>:	74 6f	je     0x54dc40 <arith_driver+192>
+0x000000000054dbc9	2505	  return lisp_h_MARKERP (x);
+   0x000000000054dbc5 <arith_driver+69>:	89 f8	mov    %edi,%eax
+   0x000000000054dbc7 <arith_driver+71>:	89 fa	mov    %edi,%edx
+=> 0x000000000054dbc9 <arith_driver+73>:	83 e0 07	and    $0x7,%eax
+   0x000000000054dbcc <arith_driver+76>:	83 f8 01	cmp    $0x1,%eax
+   0x000000000054dbcf <arith_driver+79>:	74 6f	je     0x54dc40 <arith_driver+192>
+0x000000000054dbcc in MARKERP (x=5001136962) at ../../emacs-26.3/src/lisp.h:2505
+2505	  return lisp_h_MARKERP (x);
+   0x000000000054dbc5 <arith_driver+69>:	89 f8	mov    %edi,%eax
+   0x000000000054dbc7 <arith_driver+71>:	89 fa	mov    %edi,%edx
+   0x000000000054dbc9 <arith_driver+73>:	83 e0 07	and    $0x7,%eax
+=> 0x000000000054dbcc <arith_driver+76>:	83 f8 01	cmp    $0x1,%eax
+   0x000000000054dbcf <arith_driver+79>:	74 6f	je     0x54dc40 <arith_driver+192>
+0x000000000054dbcf	2505	  return lisp_h_MARKERP (x);
+   0x000000000054dbc5 <arith_driver+69>:	89 f8	mov    %edi,%eax
+   0x000000000054dbc7 <arith_driver+71>:	89 fa	mov    %edi,%edx
+   0x000000000054dbc9 <arith_driver+73>:	83 e0 07	and    $0x7,%eax
+   0x000000000054dbcc <arith_driver+76>:	83 f8 01	cmp    $0x1,%eax
+=> 0x000000000054dbcf <arith_driver+79>:	74 6f	je     0x54dc40 <arith_driver+192>
+INTEGERP (x=<optimized out>) at ../../emacs-26.3/src/lisp.h:2751
+2751	  return INTEGERP (x) || FLOATP (x);
+=> 0x000000000054dbd1 <arith_driver+81>:	83 e2 03	and    $0x3,%edx
+   0x000000000054dbd4 <arith_driver+84>:	83 fa 02	cmp    $0x2,%edx
+   0x000000000054dbd7 <arith_driver+87>:	74 3b	je     0x54dc14 <arith_driver+148>
+   0x000000000054dbd9 <arith_driver+89>:	83 f8 07	cmp    $0x7,%eax
+   0x000000000054dbdc <arith_driver+92>:	0f 84 6e 01 00 00	je     0x54dd50 <arith_driver+464>
+0x000000000054dbd4 in NUMBERP (x=5001136962) at ../../emacs-26.3/src/lisp.h:2751
+2751	  return INTEGERP (x) || FLOATP (x);
+   0x000000000054dbd1 <arith_driver+81>:	83 e2 03	and    $0x3,%edx
+=> 0x000000000054dbd4 <arith_driver+84>:	83 fa 02	cmp    $0x2,%edx
+   0x000000000054dbd7 <arith_driver+87>:	74 3b	je     0x54dc14 <arith_driver+148>
+   0x000000000054dbd9 <arith_driver+89>:	83 f8 07	cmp    $0x7,%eax
+   0x000000000054dbdc <arith_driver+92>:	0f 84 6e 01 00 00	je     0x54dd50 <arith_driver+464>
+0x000000000054dbd7	2751	  return INTEGERP (x) || FLOATP (x);
+   0x000000000054dbd1 <arith_driver+81>:	83 e2 03	and    $0x3,%edx
+   0x000000000054dbd4 <arith_driver+84>:	83 fa 02	cmp    $0x2,%edx
+=> 0x000000000054dbd7 <arith_driver+87>:	74 3b	je     0x54dc14 <arith_driver+148>
+   0x000000000054dbd9 <arith_driver+89>:	83 f8 07	cmp    $0x7,%eax
+   0x000000000054dbdc <arith_driver+92>:	0f 84 6e 01 00 00	je     0x54dd50 <arith_driver+464>
+arith_driver (code=Amult, nargs=<optimized out>, args=0x7fffffffc720) at ../../emacs-26.3/src/lisp.h:2676
+2676	  return lisp_h_FLOATP (x);
+=> 0x000000000054dc14 <arith_driver+148>:	83 f8 07	cmp    $0x7,%eax
+   0x000000000054dc17 <arith_driver+151>:	0f 84 33 01 00 00	je     0x54dd50 <arith_driver+464>
+0x000000000054dc17	2676	  return lisp_h_FLOATP (x);
+   0x000000000054dc14 <arith_driver+148>:	83 f8 07	cmp    $0x7,%eax
+=> 0x000000000054dc17 <arith_driver+151>:	0f 84 33 01 00 00	je     0x54dd50 <arith_driver+464>
+2825	      args[argnum] = val;
+=> 0x000000000054dc1d <arith_driver+157>:	49 89 3c de	mov    %rdi,(%r14,%rbx,8)
+XINT (a=5001136962) at ../../emacs-26.3/src/lisp.h:950
+950	  return lisp_h_XINT (a);
+=> 0x000000000054dc21 <arith_driver+161>:	48 c1 ff 02	sar    $0x2,%rdi
+arith_driver (code=Amult, nargs=<optimized out>, args=0x7fffffffc720) at ../../emacs-26.3/src/data.c:2827
+2827	      switch (code)
+=> 0x000000000054dc25 <arith_driver+165>:	41 83 fc 06	cmp    $0x6,%r12d
+   0x000000000054dc29 <arith_driver+169>:	0f 87 b1 00 00 00	ja     0x54dce0 <arith_driver+352>
+   0x000000000054dc2f <arith_driver+175>:	44 89 e0	mov    %r12d,%eax
+   0x000000000054dc32 <arith_driver+178>:	ff 24 c5 e0 dc 5f 00	jmpq   *0x5fdce0(,%rax,8)
+   0x000000000054dc39 <arith_driver+185>:	0f 1f 80 00 00 00 00	nopl   0x0(%rax)
+0x000000000054dc29	2827	      switch (code)
+   0x000000000054dc25 <arith_driver+165>:	41 83 fc 06	cmp    $0x6,%r12d
+=> 0x000000000054dc29 <arith_driver+169>:	0f 87 b1 00 00 00	ja     0x54dce0 <arith_driver+352>
+   0x000000000054dc2f <arith_driver+175>:	44 89 e0	mov    %r12d,%eax
+   0x000000000054dc32 <arith_driver+178>:	ff 24 c5 e0 dc 5f 00	jmpq   *0x5fdce0(,%rax,8)
+   0x000000000054dc39 <arith_driver+185>:	0f 1f 80 00 00 00 00	nopl   0x0(%rax)
+0x000000000054dc2f	2827	      switch (code)
+   0x000000000054dc25 <arith_driver+165>:	41 83 fc 06	cmp    $0x6,%r12d
+   0x000000000054dc29 <arith_driver+169>:	0f 87 b1 00 00 00	ja     0x54dce0 <arith_driver+352>
+=> 0x000000000054dc2f <arith_driver+175>:	44 89 e0	mov    %r12d,%eax
+   0x000000000054dc32 <arith_driver+178>:	ff 24 c5 e0 dc 5f 00	jmpq   *0x5fdce0(,%rax,8)
+   0x000000000054dc39 <arith_driver+185>:	0f 1f 80 00 00 00 00	nopl   0x0(%rax)
+0x000000000054dc32	2827	      switch (code)
+   0x000000000054dc25 <arith_driver+165>:	41 83 fc 06	cmp    $0x6,%r12d
+   0x000000000054dc29 <arith_driver+169>:	0f 87 b1 00 00 00	ja     0x54dce0 <arith_driver+352>
+   0x000000000054dc2f <arith_driver+175>:	44 89 e0	mov    %r12d,%eax
+=> 0x000000000054dc32 <arith_driver+178>:	ff 24 c5 e0 dc 5f 00	jmpq   *0x5fdce0(,%rax,8)
+   0x000000000054dc39 <arith_driver+185>:	0f 1f 80 00 00 00 00	nopl   0x0(%rax)
+2839		  overflow |= INT_MULTIPLY_WRAPV (accum, next, &accum);
+=> 0x000000000054dcc0 <arith_driver+320>:	48 0f af fd	imul   %rbp,%rdi
+   0x000000000054dcc4 <arith_driver+324>:	0f 90 c0	seto   %al
+   0x000000000054dcc7 <arith_driver+327>:	48 89 fd	mov    %rdi,%rbp
+   0x000000000054dcca <arith_driver+330>:	41 09 c7	or     %eax,%r15d
+0x000000000054dcc4	2839		  overflow |= INT_MULTIPLY_WRAPV (accum, next, &accum);
+   0x000000000054dcc0 <arith_driver+320>:	48 0f af fd	imul   %rbp,%rdi
+=> 0x000000000054dcc4 <arith_driver+324>:	0f 90 c0	seto   %al
+   0x000000000054dcc7 <arith_driver+327>:	48 89 fd	mov    %rdi,%rbp
+   0x000000000054dcca <arith_driver+330>:	41 09 c7	or     %eax,%r15d
+0x000000000054dcc7	2839		  overflow |= INT_MULTIPLY_WRAPV (accum, next, &accum);
+   0x000000000054dcc0 <arith_driver+320>:	48 0f af fd	imul   %rbp,%rdi
+   0x000000000054dcc4 <arith_driver+324>:	0f 90 c0	seto   %al
+=> 0x000000000054dcc7 <arith_driver+327>:	48 89 fd	mov    %rdi,%rbp
+   0x000000000054dcca <arith_driver+330>:	41 09 c7	or     %eax,%r15d
+0x000000000054dcca	2839		  overflow |= INT_MULTIPLY_WRAPV (accum, next, &accum);
+   0x000000000054dcc0 <arith_driver+320>:	48 0f af fd	imul   %rbp,%rdi
+   0x000000000054dcc4 <arith_driver+324>:	0f 90 c0	seto   %al
+   0x000000000054dcc7 <arith_driver+327>:	48 89 fd	mov    %rdi,%rbp
+=> 0x000000000054dcca <arith_driver+330>:	41 09 c7	or     %eax,%r15d
+2840		  break;
+=> 0x000000000054dccd <arith_driver+333>:	eb a9	jmp    0x54dc78 <arith_driver+248>
+   0x000000000054dccf <arith_driver+335>:	90	nop
+2862		  break;
+=> 0x000000000054dc78 <arith_driver+248>:	48 83 c3 01	add    $0x1,%rbx
+   0x000000000054dc7c <arith_driver+252>:	48 39 de	cmp    %rbx,%rsi
+   0x000000000054dc7f <arith_driver+255>:	74 7b	je     0x54dcfc <arith_driver+380>
+0x000000000054dc7c	2862		  break;
+   0x000000000054dc78 <arith_driver+248>:	48 83 c3 01	add    $0x1,%rbx
+=> 0x000000000054dc7c <arith_driver+252>:	48 39 de	cmp    %rbx,%rsi
+   0x000000000054dc7f <arith_driver+255>:	74 7b	je     0x54dcfc <arith_driver+380>
+0x000000000054dc7f	2862		  break;
+   0x000000000054dc78 <arith_driver+248>:	48 83 c3 01	add    $0x1,%rbx
+   0x000000000054dc7c <arith_driver+252>:	48 39 de	cmp    %rbx,%rsi
+=> 0x000000000054dc7f <arith_driver+255>:	74 7b	je     0x54dcfc <arith_driver+380>
+2812	      if (! overflow)
+=> 0x000000000054dc81 <arith_driver+257>:	45 84 ff	test   %r15b,%r15b
+   0x000000000054dc84 <arith_driver+260>:	48 0f 44 cd	cmove  %rbp,%rcx
+   0x000000000054dc88 <arith_driver+264>:	4c 0f 44 eb	cmove  %rbx,%r13
+   0x000000000054dc8c <arith_driver+268>:	e9 30 ff ff ff	jmpq   0x54dbc1 <arith_driver+65>
+   0x000000000054dc91 <arith_driver+273>:	0f 1f 80 00 00 00 00	nopl   0x0(%rax)
+0x000000000054dc84	2812	      if (! overflow)
+   0x000000000054dc81 <arith_driver+257>:	45 84 ff	test   %r15b,%r15b
+=> 0x000000000054dc84 <arith_driver+260>:	48 0f 44 cd	cmove  %rbp,%rcx
+   0x000000000054dc88 <arith_driver+264>:	4c 0f 44 eb	cmove  %rbx,%r13
+   0x000000000054dc8c <arith_driver+268>:	e9 30 ff ff ff	jmpq   0x54dbc1 <arith_driver+65>
+   0x000000000054dc91 <arith_driver+273>:	0f 1f 80 00 00 00 00	nopl   0x0(%rax)
+0x000000000054dc88	2812	      if (! overflow)
+   0x000000000054dc81 <arith_driver+257>:	45 84 ff	test   %r15b,%r15b
+   0x000000000054dc84 <arith_driver+260>:	48 0f 44 cd	cmove  %rbp,%rcx
+=> 0x000000000054dc88 <arith_driver+264>:	4c 0f 44 eb	cmove  %rbx,%r13
+   0x000000000054dc8c <arith_driver+268>:	e9 30 ff ff ff	jmpq   0x54dbc1 <arith_driver+65>
+   0x000000000054dc91 <arith_driver+273>:	0f 1f 80 00 00 00 00	nopl   0x0(%rax)
+0x000000000054dc8c	2812	      if (! overflow)
+   0x000000000054dc81 <arith_driver+257>:	45 84 ff	test   %r15b,%r15b
+   0x000000000054dc84 <arith_driver+260>:	48 0f 44 cd	cmove  %rbp,%rcx
+   0x000000000054dc88 <arith_driver+264>:	4c 0f 44 eb	cmove  %rbx,%r13
+=> 0x000000000054dc8c <arith_driver+268>:	e9 30 ff ff ff	jmpq   0x54dbc1 <arith_driver+65>
+   0x000000000054dc91 <arith_driver+273>:	0f 1f 80 00 00 00 00	nopl   0x0(%rax)
+2819	      val = args[argnum];
+=> 0x000000000054dbc1 <arith_driver+65>:	49 8b 3c de	mov    (%r14,%rbx,8),%rdi
+XTYPE (a=-7377020154) at ../../emacs-26.3/src/lisp.h:2505
+2505	  return lisp_h_MARKERP (x);
+=> 0x000000000054dbc5 <arith_driver+69>:	89 f8	mov    %edi,%eax
+   0x000000000054dbc7 <arith_driver+71>:	89 fa	mov    %edi,%edx
+   0x000000000054dbc9 <arith_driver+73>:	83 e0 07	and    $0x7,%eax
+   0x000000000054dbcc <arith_driver+76>:	83 f8 01	cmp    $0x1,%eax
+   0x000000000054dbcf <arith_driver+79>:	74 6f	je     0x54dc40 <arith_driver+192>
+0x000000000054dbc7	2505	  return lisp_h_MARKERP (x);
+   0x000000000054dbc5 <arith_driver+69>:	89 f8	mov    %edi,%eax
+=> 0x000000000054dbc7 <arith_driver+71>:	89 fa	mov    %edi,%edx
+   0x000000000054dbc9 <arith_driver+73>:	83 e0 07	and    $0x7,%eax
+   0x000000000054dbcc <arith_driver+76>:	83 f8 01	cmp    $0x1,%eax
+   0x000000000054dbcf <arith_driver+79>:	74 6f	je     0x54dc40 <arith_driver+192>
+0x000000000054dbc9	2505	  return lisp_h_MARKERP (x);
+   0x000000000054dbc5 <arith_driver+69>:	89 f8	mov    %edi,%eax
+   0x000000000054dbc7 <arith_driver+71>:	89 fa	mov    %edi,%edx
+=> 0x000000000054dbc9 <arith_driver+73>:	83 e0 07	and    $0x7,%eax
+   0x000000000054dbcc <arith_driver+76>:	83 f8 01	cmp    $0x1,%eax
+   0x000000000054dbcf <arith_driver+79>:	74 6f	je     0x54dc40 <arith_driver+192>
+0x000000000054dbcc in MARKERP (x=-7377020154) at ../../emacs-26.3/src/lisp.h:2505
+2505	  return lisp_h_MARKERP (x);
+   0x000000000054dbc5 <arith_driver+69>:	89 f8	mov    %edi,%eax
+   0x000000000054dbc7 <arith_driver+71>:	89 fa	mov    %edi,%edx
+   0x000000000054dbc9 <arith_driver+73>:	83 e0 07	and    $0x7,%eax
+=> 0x000000000054dbcc <arith_driver+76>:	83 f8 01	cmp    $0x1,%eax
+   0x000000000054dbcf <arith_driver+79>:	74 6f	je     0x54dc40 <arith_driver+192>
+0x000000000054dbcf	2505	  return lisp_h_MARKERP (x);
+   0x000000000054dbc5 <arith_driver+69>:	89 f8	mov    %edi,%eax
+   0x000000000054dbc7 <arith_driver+71>:	89 fa	mov    %edi,%edx
+   0x000000000054dbc9 <arith_driver+73>:	83 e0 07	and    $0x7,%eax
+   0x000000000054dbcc <arith_driver+76>:	83 f8 01	cmp    $0x1,%eax
+=> 0x000000000054dbcf <arith_driver+79>:	74 6f	je     0x54dc40 <arith_driver+192>
+INTEGERP (x=<optimized out>) at ../../emacs-26.3/src/lisp.h:2751
+2751	  return INTEGERP (x) || FLOATP (x);
+=> 0x000000000054dbd1 <arith_driver+81>:	83 e2 03	and    $0x3,%edx
+   0x000000000054dbd4 <arith_driver+84>:	83 fa 02	cmp    $0x2,%edx
+   0x000000000054dbd7 <arith_driver+87>:	74 3b	je     0x54dc14 <arith_driver+148>
+   0x000000000054dbd9 <arith_driver+89>:	83 f8 07	cmp    $0x7,%eax
+   0x000000000054dbdc <arith_driver+92>:	0f 84 6e 01 00 00	je     0x54dd50 <arith_driver+464>
+0x000000000054dbd4 in NUMBERP (x=-7377020154) at ../../emacs-26.3/src/lisp.h:2751
+2751	  return INTEGERP (x) || FLOATP (x);
+   0x000000000054dbd1 <arith_driver+81>:	83 e2 03	and    $0x3,%edx
+=> 0x000000000054dbd4 <arith_driver+84>:	83 fa 02	cmp    $0x2,%edx
+   0x000000000054dbd7 <arith_driver+87>:	74 3b	je     0x54dc14 <arith_driver+148>
+   0x000000000054dbd9 <arith_driver+89>:	83 f8 07	cmp    $0x7,%eax
+   0x000000000054dbdc <arith_driver+92>:	0f 84 6e 01 00 00	je     0x54dd50 <arith_driver+464>
+0x000000000054dbd7	2751	  return INTEGERP (x) || FLOATP (x);
+   0x000000000054dbd1 <arith_driver+81>:	83 e2 03	and    $0x3,%edx
+   0x000000000054dbd4 <arith_driver+84>:	83 fa 02	cmp    $0x2,%edx
+=> 0x000000000054dbd7 <arith_driver+87>:	74 3b	je     0x54dc14 <arith_driver+148>
+   0x000000000054dbd9 <arith_driver+89>:	83 f8 07	cmp    $0x7,%eax
+   0x000000000054dbdc <arith_driver+92>:	0f 84 6e 01 00 00	je     0x54dd50 <arith_driver+464>
+arith_driver (code=Amult, nargs=<optimized out>, args=0x7fffffffc720) at ../../emacs-26.3/src/lisp.h:2676
+2676	  return lisp_h_FLOATP (x);
+=> 0x000000000054dc14 <arith_driver+148>:	83 f8 07	cmp    $0x7,%eax
+   0x000000000054dc17 <arith_driver+151>:	0f 84 33 01 00 00	je     0x54dd50 <arith_driver+464>
+0x000000000054dc17	2676	  return lisp_h_FLOATP (x);
+   0x000000000054dc14 <arith_driver+148>:	83 f8 07	cmp    $0x7,%eax
+=> 0x000000000054dc17 <arith_driver+151>:	0f 84 33 01 00 00	je     0x54dd50 <arith_driver+464>
+2825	      args[argnum] = val;
+=> 0x000000000054dc1d <arith_driver+157>:	49 89 3c de	mov    %rdi,(%r14,%rbx,8)
+XINT (a=-7377020154) at ../../emacs-26.3/src/lisp.h:950
+950	  return lisp_h_XINT (a);
+=> 0x000000000054dc21 <arith_driver+161>:	48 c1 ff 02	sar    $0x2,%rdi
+arith_driver (code=Amult, nargs=<optimized out>, args=0x7fffffffc720) at ../../emacs-26.3/src/data.c:2827
+2827	      switch (code)
+=> 0x000000000054dc25 <arith_driver+165>:	41 83 fc 06	cmp    $0x6,%r12d
+   0x000000000054dc29 <arith_driver+169>:	0f 87 b1 00 00 00	ja     0x54dce0 <arith_driver+352>
+   0x000000000054dc2f <arith_driver+175>:	44 89 e0	mov    %r12d,%eax
+   0x000000000054dc32 <arith_driver+178>:	ff 24 c5 e0 dc 5f 00	jmpq   *0x5fdce0(,%rax,8)
+   0x000000000054dc39 <arith_driver+185>:	0f 1f 80 00 00 00 00	nopl   0x0(%rax)
+0x000000000054dc29	2827	      switch (code)
+   0x000000000054dc25 <arith_driver+165>:	41 83 fc 06	cmp    $0x6,%r12d
+=> 0x000000000054dc29 <arith_driver+169>:	0f 87 b1 00 00 00	ja     0x54dce0 <arith_driver+352>
+   0x000000000054dc2f <arith_driver+175>:	44 89 e0	mov    %r12d,%eax
+   0x000000000054dc32 <arith_driver+178>:	ff 24 c5 e0 dc 5f 00	jmpq   *0x5fdce0(,%rax,8)
+   0x000000000054dc39 <arith_driver+185>:	0f 1f 80 00 00 00 00	nopl   0x0(%rax)
+0x000000000054dc2f	2827	      switch (code)
+   0x000000000054dc25 <arith_driver+165>:	41 83 fc 06	cmp    $0x6,%r12d
+   0x000000000054dc29 <arith_driver+169>:	0f 87 b1 00 00 00	ja     0x54dce0 <arith_driver+352>
+=> 0x000000000054dc2f <arith_driver+175>:	44 89 e0	mov    %r12d,%eax
+   0x000000000054dc32 <arith_driver+178>:	ff 24 c5 e0 dc 5f 00	jmpq   *0x5fdce0(,%rax,8)
+   0x000000000054dc39 <arith_driver+185>:	0f 1f 80 00 00 00 00	nopl   0x0(%rax)
+0x000000000054dc32	2827	      switch (code)
+   0x000000000054dc25 <arith_driver+165>:	41 83 fc 06	cmp    $0x6,%r12d
+   0x000000000054dc29 <arith_driver+169>:	0f 87 b1 00 00 00	ja     0x54dce0 <arith_driver+352>
+   0x000000000054dc2f <arith_driver+175>:	44 89 e0	mov    %r12d,%eax
+=> 0x000000000054dc32 <arith_driver+178>:	ff 24 c5 e0 dc 5f 00	jmpq   *0x5fdce0(,%rax,8)
+   0x000000000054dc39 <arith_driver+185>:	0f 1f 80 00 00 00 00	nopl   0x0(%rax)
+2839		  overflow |= INT_MULTIPLY_WRAPV (accum, next, &accum);
+=> 0x000000000054dcc0 <arith_driver+320>:	48 0f af fd	imul   %rbp,%rdi
+   0x000000000054dcc4 <arith_driver+324>:	0f 90 c0	seto   %al
+   0x000000000054dcc7 <arith_driver+327>:	48 89 fd	mov    %rdi,%rbp
+   0x000000000054dcca <arith_driver+330>:	41 09 c7	or     %eax,%r15d
+0x000000000054dcc4	2839		  overflow |= INT_MULTIPLY_WRAPV (accum, next, &accum);
+   0x000000000054dcc0 <arith_driver+320>:	48 0f af fd	imul   %rbp,%rdi
+=> 0x000000000054dcc4 <arith_driver+324>:	0f 90 c0	seto   %al
+   0x000000000054dcc7 <arith_driver+327>:	48 89 fd	mov    %rdi,%rbp
+   0x000000000054dcca <arith_driver+330>:	41 09 c7	or     %eax,%r15d
+0x000000000054dcc7	2839		  overflow |= INT_MULTIPLY_WRAPV (accum, next, &accum);
+   0x000000000054dcc0 <arith_driver+320>:	48 0f af fd	imul   %rbp,%rdi
+   0x000000000054dcc4 <arith_driver+324>:	0f 90 c0	seto   %al
+=> 0x000000000054dcc7 <arith_driver+327>:	48 89 fd	mov    %rdi,%rbp
+   0x000000000054dcca <arith_driver+330>:	41 09 c7	or     %eax,%r15d
+0x000000000054dcca	2839		  overflow |= INT_MULTIPLY_WRAPV (accum, next, &accum);
+   0x000000000054dcc0 <arith_driver+320>:	48 0f af fd	imul   %rbp,%rdi
+   0x000000000054dcc4 <arith_driver+324>:	0f 90 c0	seto   %al
+   0x000000000054dcc7 <arith_driver+327>:	48 89 fd	mov    %rdi,%rbp
+=> 0x000000000054dcca <arith_driver+330>:	41 09 c7	or     %eax,%r15d
+2840		  break;
+=> 0x000000000054dccd <arith_driver+333>:	eb a9	jmp    0x54dc78 <arith_driver+248>
+   0x000000000054dccf <arith_driver+335>:	90	nop
+2862		  break;
+=> 0x000000000054dc78 <arith_driver+248>:	48 83 c3 01	add    $0x1,%rbx
+   0x000000000054dc7c <arith_driver+252>:	48 39 de	cmp    %rbx,%rsi
+   0x000000000054dc7f <arith_driver+255>:	74 7b	je     0x54dcfc <arith_driver+380>
+0x000000000054dc7c	2862		  break;
+   0x000000000054dc78 <arith_driver+248>:	48 83 c3 01	add    $0x1,%rbx
+=> 0x000000000054dc7c <arith_driver+252>:	48 39 de	cmp    %rbx,%rsi
+   0x000000000054dc7f <arith_driver+255>:	74 7b	je     0x54dcfc <arith_driver+380>
+0x000000000054dc7f	2862		  break;
+   0x000000000054dc78 <arith_driver+248>:	48 83 c3 01	add    $0x1,%rbx
+   0x000000000054dc7c <arith_driver+252>:	48 39 de	cmp    %rbx,%rsi
+=> 0x000000000054dc7f <arith_driver+255>:	74 7b	je     0x54dcfc <arith_driver+380>
+make_number (n=-2305843009802285360) at ../../emacs-26.3/src/lisp.h:944
+944	  return lisp_h_make_number (n);
+=> 0x000000000054dcfc <arith_driver+380>:	48 8d 04 ad 02 00 00 00	lea    0x2(,%rbp,4),%rax
+arith_driver (code=Amult, nargs=<optimized out>, args=0x7fffffffc720) at ../../emacs-26.3/src/data.c:2867
+2867	  return val;
+=> 0x000000000054dd04 <arith_driver+388>:	48 83 c4 18	add    $0x18,%rsp
+   0x000000000054dd08 <arith_driver+392>:	5b	pop    %rbx
+   0x000000000054dd09 <arith_driver+393>:	5d	pop    %rbp
+   0x000000000054dd0a <arith_driver+394>:	41 5c	pop    %r12
+   0x000000000054dd0c <arith_driver+396>:	41 5d	pop    %r13
+   0x000000000054dd0e <arith_driver+398>:	41 5e	pop    %r14
+   0x000000000054dd10 <arith_driver+400>:	41 5f	pop    %r15
+   0x000000000054dd12 <arith_driver+402>:	c3	retq   
+   0x000000000054dd13 <arith_driver+403>:	0f 1f 44 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000054dd08	2867	  return val;
+   0x000000000054dd04 <arith_driver+388>:	48 83 c4 18	add    $0x18,%rsp
+=> 0x000000000054dd08 <arith_driver+392>:	5b	pop    %rbx
+   0x000000000054dd09 <arith_driver+393>:	5d	pop    %rbp
+   0x000000000054dd0a <arith_driver+394>:	41 5c	pop    %r12
+   0x000000000054dd0c <arith_driver+396>:	41 5d	pop    %r13
+   0x000000000054dd0e <arith_driver+398>:	41 5e	pop    %r14
+   0x000000000054dd10 <arith_driver+400>:	41 5f	pop    %r15
+   0x000000000054dd12 <arith_driver+402>:	c3	retq   
+   0x000000000054dd13 <arith_driver+403>:	0f 1f 44 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000054dd09	2867	  return val;
+   0x000000000054dd04 <arith_driver+388>:	48 83 c4 18	add    $0x18,%rsp
+   0x000000000054dd08 <arith_driver+392>:	5b	pop    %rbx
+=> 0x000000000054dd09 <arith_driver+393>:	5d	pop    %rbp
+   0x000000000054dd0a <arith_driver+394>:	41 5c	pop    %r12
+   0x000000000054dd0c <arith_driver+396>:	41 5d	pop    %r13
+   0x000000000054dd0e <arith_driver+398>:	41 5e	pop    %r14
+   0x000000000054dd10 <arith_driver+400>:	41 5f	pop    %r15
+   0x000000000054dd12 <arith_driver+402>:	c3	retq   
+   0x000000000054dd13 <arith_driver+403>:	0f 1f 44 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000054dd0a	2867	  return val;
+   0x000000000054dd04 <arith_driver+388>:	48 83 c4 18	add    $0x18,%rsp
+   0x000000000054dd08 <arith_driver+392>:	5b	pop    %rbx
+   0x000000000054dd09 <arith_driver+393>:	5d	pop    %rbp
+=> 0x000000000054dd0a <arith_driver+394>:	41 5c	pop    %r12
+   0x000000000054dd0c <arith_driver+396>:	41 5d	pop    %r13
+   0x000000000054dd0e <arith_driver+398>:	41 5e	pop    %r14
+   0x000000000054dd10 <arith_driver+400>:	41 5f	pop    %r15
+   0x000000000054dd12 <arith_driver+402>:	c3	retq   
+   0x000000000054dd13 <arith_driver+403>:	0f 1f 44 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000054dd0c	2867	  return val;
+   0x000000000054dd04 <arith_driver+388>:	48 83 c4 18	add    $0x18,%rsp
+   0x000000000054dd08 <arith_driver+392>:	5b	pop    %rbx
+   0x000000000054dd09 <arith_driver+393>:	5d	pop    %rbp
+   0x000000000054dd0a <arith_driver+394>:	41 5c	pop    %r12
+=> 0x000000000054dd0c <arith_driver+396>:	41 5d	pop    %r13
+   0x000000000054dd0e <arith_driver+398>:	41 5e	pop    %r14
+   0x000000000054dd10 <arith_driver+400>:	41 5f	pop    %r15
+   0x000000000054dd12 <arith_driver+402>:	c3	retq   
+   0x000000000054dd13 <arith_driver+403>:	0f 1f 44 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000054dd0e	2867	  return val;
+   0x000000000054dd04 <arith_driver+388>:	48 83 c4 18	add    $0x18,%rsp
+   0x000000000054dd08 <arith_driver+392>:	5b	pop    %rbx
+   0x000000000054dd09 <arith_driver+393>:	5d	pop    %rbp
+   0x000000000054dd0a <arith_driver+394>:	41 5c	pop    %r12
+   0x000000000054dd0c <arith_driver+396>:	41 5d	pop    %r13
+=> 0x000000000054dd0e <arith_driver+398>:	41 5e	pop    %r14
+   0x000000000054dd10 <arith_driver+400>:	41 5f	pop    %r15
+   0x000000000054dd12 <arith_driver+402>:	c3	retq   
+   0x000000000054dd13 <arith_driver+403>:	0f 1f 44 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000054dd10	2867	  return val;
+   0x000000000054dd04 <arith_driver+388>:	48 83 c4 18	add    $0x18,%rsp
+   0x000000000054dd08 <arith_driver+392>:	5b	pop    %rbx
+   0x000000000054dd09 <arith_driver+393>:	5d	pop    %rbp
+   0x000000000054dd0a <arith_driver+394>:	41 5c	pop    %r12
+   0x000000000054dd0c <arith_driver+396>:	41 5d	pop    %r13
+   0x000000000054dd0e <arith_driver+398>:	41 5e	pop    %r14
+=> 0x000000000054dd10 <arith_driver+400>:	41 5f	pop    %r15
+   0x000000000054dd12 <arith_driver+402>:	c3	retq   
+   0x000000000054dd13 <arith_driver+403>:	0f 1f 44 00 00	nopl   0x0(%rax,%rax,1)
+0x000000000054dd12	2867	  return val;
+   0x000000000054dd04 <arith_driver+388>:	48 83 c4 18	add    $0x18,%rsp
+   0x000000000054dd08 <arith_driver+392>:	5b	pop    %rbx
+   0x000000000054dd09 <arith_driver+393>:	5d	pop    %rbp
+   0x000000000054dd0a <arith_driver+394>:	41 5c	pop    %r12
+   0x000000000054dd0c <arith_driver+396>:	41 5d	pop    %r13
+   0x000000000054dd0e <arith_driver+398>:	41 5e	pop    %r14
+   0x000000000054dd10 <arith_driver+400>:	41 5f	pop    %r15
+=> 0x000000000054dd12 <arith_driver+402>:	c3	retq   
+   0x000000000054dd13 <arith_driver+403>:	0f 1f 44 00 00	nopl   0x0(%rax,%rax,1)
+0x0000000000564b22 in eval_sub (form=<optimized out>) at ../../emacs-26.3/src/lisp.h:1862
+1862	  return XUNTAG (a, Lisp_Vectorlike);
+   0x0000000000564b1b <eval_sub+1595>:	48 89 ce	mov    %rcx,%rsi
+   0x0000000000564b1e <eval_sub+1598>:	41 ff 57 08	callq  *0x8(%r15)
+=> 0x0000000000564b22 <eval_sub+1602>:	49 89 c5	mov    %rax,%r13
+2212		  lisp_eval_depth--;
+=> 0x0000000000564b25 <eval_sub+1605>:	48 8b 05 cc 6e 60 00	mov    0x606ecc(%rip),%rax        # 0xb6b9f8 <current_thread>
+   0x0000000000564b2c <eval_sub+1612>:	48 83 a8 80 00 00 00 01	subq   $0x1,0x80(%rax)
+0x0000000000564b2c	2212		  lisp_eval_depth--;
+   0x0000000000564b25 <eval_sub+1605>:	48 8b 05 cc 6e 60 00	mov    0x606ecc(%rip),%rax        # 0xb6b9f8 <current_thread>
+=> 0x0000000000564b2c <eval_sub+1612>:	48 83 a8 80 00 00 00 01	subq   $0x1,0x80(%rax)

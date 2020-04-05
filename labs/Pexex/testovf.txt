@@ -1,0 +1,151 @@
+Compare the resulting assembly-language
+files, and describe and justify the differences that you see.
+Put your description into a plain ASCII text file testovf.txt.
+
+(1)
+
+With just optimization of 'o2' the file realizes that it will always
+return 0 because there is no defined wrapping of signed longs and any number
+'n' + another number would always be larger than n, so it just returns 0 always.  
+This was done by the compiler by first xoring the return register eax with itself
+to make it be all zero then it returns.
+
+(2)
+
+Now the complier has the '-fwrapv' enabled so that it will know what to do when overflow 
+happens on signed longs.  The code has more instructions because it knows that adding
+n to a large number could result in n being less than the result.  It moves the large
+number into the return register and then adds n to it.  Then it compares the result to n 
+and it sets the less than flag and returns.  All this is because there is
+now defined in'teger overflow for longs.
+
+(3)
+
+Finally, with the '-fsanitize=undefined' tag the file grew significantly in size.  This
+is because it creates checks for the addition command to check for overflow.  This makes
+the compiler check for undefined actions at runtime.  After its addition command
+it jumps and calls a function called '__ubsan_handle_add_overflow'.  This command will 
+handle the overflow of the addition command then jump back to continue execution.  This 
+flag uses the 'ubsan' or Undefined Behavior Sanitizer to handle addition overflow.  This
+flag allows for the compiler to handle undefined behavior.
+
+//////////
+//C code//
+//////////
+
+_Bool
+testovf (long n)
+{
+  return n + 9223372036854775807 < n;
+}
+
+/////////
+//'-O2'//
+/////////
+
+	.file	"ofv.c"
+	.text
+	.p2align 4
+	.globl	testovf
+	.type	testovf, @function
+testovf:
+.LFB0:
+	.cfi_startproc
+	xorl	%eax, %eax						//xor with itself
+	ret 									//return
+	.cfi_endproc
+.LFE0:
+	.size	testovf, .-testovf
+	.ident	"GCC: (GNU) 9.2.0"
+	.section	.note.GNU-stack,"",@progbits
+
+////////////////
+//'-O2 -fwrap'//
+////////////////
+
+	.file	"ofv.c"
+	.text
+	.p2align 4
+	.globl	testovf
+	.type	testovf, @function
+testovf:
+.LFB0:
+	.cfi_startproc
+	movabsq	$9223372036854775807, %rax		//puts the number into rax
+	addq	%rdi, %rax						//adds the first arg in rsi to it
+	cmpq	%rdi, %rax 						//compares result to first arg
+	setl	%al 							//sets the flag for less than
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	testovf, .-testovf
+	.ident	"GCC: (GNU) 9.2.0"
+	.section	.note.GNU-stack,"",@progbits
+
+
+//////////////////////////////
+//'-O2 -fsanitize=undefined'//
+/////////////////////////////
+
+	.file	"ofv.c"
+	.text
+	.p2align 4
+	.globl	testovf
+	.type	testovf, @function
+testovf:
+.LFB0:
+	.cfi_startproc
+	movabsq	$9223372036854775807, %rdx
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rdi, %rbp
+	pushq	%rbx
+	.cfi_def_cfa_offset 24
+	.cfi_offset 3, -24
+	movq	%rdi, %rbx
+	subq	$8, %rsp
+	.cfi_def_cfa_offset 32
+	addq	%rdx, %rbp
+	jo	.L6
+.L2:
+	cmpq	%rbx, %rbp
+	setl	%al
+	addq	$8, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 24
+	popq	%rbx
+	.cfi_def_cfa_offset 16
+	popq	%rbp
+	.cfi_def_cfa_offset 8
+	ret
+.L6:
+	.cfi_restore_state
+	movq	%rdi, %rsi
+	movl	$.Lubsan_data0, %edi
+	call	__ubsan_handle_add_overflow
+	jmp	.L2
+	.cfi_endproc
+.LFE0:
+	.size	testovf, .-testovf
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC0:
+	.string	"ofv.c"
+	.data
+	.align 16
+	.type	.Lubsan_data0, @object
+	.size	.Lubsan_data0, 24
+.Lubsan_data0:
+	.quad	.LC0
+	.long	4
+	.long	12
+	.quad	.Lubsan_type0
+	.align 2
+	.type	.Lubsan_type0, @object
+	.size	.Lubsan_type0, 15
+.Lubsan_type0:
+	.value	0
+	.value	13
+	.string	"'long int'"
+	.ident	"GCC: (GNU) 9.2.0"
+	.section	.note.GNU-stack,"",@progbits
