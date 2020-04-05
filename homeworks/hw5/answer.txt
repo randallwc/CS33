@@ -1,0 +1,21 @@
+12.17
+A.
+Nothing prints because the thread never gets to the print because the main exits before the thread can get to the print statement.
+This is because the main thread does not wait for the thread to complete before it exits.
+B.
+You can replace 'exit(0)' with the following commands, which will wait for the thread to finish before exiting.
+
+Pthread_exit(NULL);
+Pthread_join(tid, NULL);
+
+12.25
+Is echo_cnt thread-safe?
+
+'echo_cnt' is thread-safe because it uses a mutex to lock and unlock when it acceses and prints the 'byte_cnt' which is a global shared variable.
+This means that threads will not be able to access and read it at the same time as each other so it is safe
+to be used in a thread. 
+
+Is it reentrant?
+
+'echo_cnt' is not reentrant because threads that call it will share the same mutex, and that does not satisfy the conditions of reentrant functions.
+Reentrant functions must have all of its data references be references to local automatic stack variables, and this is not satisfied here.

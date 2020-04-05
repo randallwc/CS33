@@ -1,0 +1,10 @@
+A - The sizeof(val) in the conditional returns an unsigned value but it is subtracted from the maxbytes which is an int. When this subtraction happens, the maxbytes is casted to be unsigned, and then this means that the evaluation of the left side of the conditional is unsigned and will therefore always be greater than or equal to zero.
+
+B - replace what the conditional with
+
+...
+if (maxbytes >= sizeof(val))
+{
+	...
+}
+

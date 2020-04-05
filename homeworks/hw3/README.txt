@@ -1,0 +1,3 @@
+Problems 3.69 and 3.72. Submit the answers as plain ASCII text files named 3.69.txt and 3.72.txt. Briefly show your work.
+
+One more thing. C18 allows declarations to have an alignment specifier. For example, 'int _Alignas (8) n;' acts just like 'int n;', except that it arranges for n's alignment to be 8 instead of the default int alignment of 4. Assuming the x86-64, what value does the C expression 'sizeof (struct { short a; char _Alignas (8) b; char c; })' return and why? and why and how does your answer change if you change 'struct' to 'union' in the question? Briefly explain in a plain ASCII text file _Alignas.txt.

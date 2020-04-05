@@ -1,0 +1,9 @@
+Do textbook problems 12.17 and 12.25.  Submit a plain text file answer.txt that solves these two problems.
+
+Also, submit a file leothread.c that is like hello.c (Figure 12.13), except that it creates and reaps L(N) - 1 joinable threads, where N is a positive command-line argument and L(N) is the Nth Leonardo number. These threads should be created as a Fibonacci tree of order N rooted in the main thread, where thread corresponding to a node creates and reaps the threads corresponding to the node's children. The Fibonacci trees of order 0 and 1 have just a root node, and a Fibonacci tree of order N > 1 has left and right Fibonacci subtrees of order N-1 and N-2, respectively.
+
+Nodes in the tree of threads should be labeled 0 through L(N)-1 in preorder: that is, each thread should have a label that is a unique integer in the range 0 .. L(N)-1, where the main thread's label is 0 and each non-leaf thread labeled T and with L(k) - 1 descendants (for some k) has two children labeled T + 1 and T + 1 + L(k - 1). Each leaf thread should simply print "[T]\n" where T is the thread’s label; each non-leaf thread with label T should first print "(T\n", then create and reap its two children, and finally print "T)\n" just before exiting. The main thread counts as a thread and so should print too. The main thread is a leaf if and only if N=1.
+
+Also, submit a file leothread.tr created by 'strace -o leothread.tr -f ./leothread 4' on a SEASnet GNU/Linux machine, where ./leothread is the executable produced by compiling leothread.c. This example should create 8 joinable threads, since L(4) - 1 = 8, which means that it runs 9 threads total (counting the main thread).
+
+Reference: Schwarz K. Smoothsort demystified. 2011-01-07. See especially the section "Leonardo Trees". Schwarz uses the term "Leonardo trees" to describe Fibonacci trees. Smoothsort is in some sense better than any sorting method you learned about in CS 31 or 32.

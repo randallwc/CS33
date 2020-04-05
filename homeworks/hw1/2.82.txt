@@ -1,0 +1,66 @@
+For each of the following C expressions, you are to indicate whether or not the expression
+always yields 1. If it always yields 1, describe the underlying mathematical principles.
+Otherwise, give an example of arguments that make it yield 0.
+
+A. (x<y) == (-x>-y)
+
+False
+
+If x is INT_MIN and y is INT_MAX it will be 0 because -x = ~x + 1 so -INT_MIN is INT_MIN.
+
+B. ((x+y)<<4) + y-x == 17*y+15*x
+
+True
+
+If you multiply a x by 16 its x << 4 or x*2^4.
+
+((x+y)<<4) + y-x == x*15 + y*17
+		== x<<4 - x + y << 4 + y
+		== (x + y)<<4 -x +y
+		== (x+y)<<4 + y - x
+
+
+C. ~x+~y+1==~(x+y)
+
+True
+
+If we use the formula -x = ~x + 1 then we can simplify.
+
+~(x+y)	==~x+~y+1
+	== -x-1-y-1+1
+	== -x-y-1
+	== -(x+y) -1
+	== ~(x+y)
+
+
+D. (ux-uy) == -(unsigned)(y-x)
+
+True
+
+If we use the formula -x = ~x + 1 we can simplify this.
+
+ (ux-uy) == -(unsigned)(y-x)
+ ux + ~uy + 1 == -(unsigned)(y - x)
+ ux + ~uy + 1 == (unsigned)(-y + x) 
+ ux + ~uy + 1 == (unsigned)( ~y + 1 + x)
+ ux + ~uy + 1 == ux + ~uy + 1
+
+E. ((x>>2)<<2)<=x
+
+True
+
+Because right shift happens first then the two LSB will be truncated then shifted back which will make it less than or equal to x.
+
+F. x % 8 == (x & 7)
+
+True
+
+If x is divisible by 8 then the bit pattern will be ...1000.
+This means if you took x and used & with a 7 which has a binary representation of 0...0111 it would yield the same answer.
+
+G. ((unsigned) -1 / 255 * (x & 255)) >> 24 == (x & 255)
+
+True
+
+-1 has a bit pattern of all 1s (111...111), and -1 divided by 255 is equivalent to x >> 8 - 1 (or 2^8 - 1).  When this is multiplied by x&255 it is equivalent to a left shift. Also, x&255 will result in an answer that is always greater than or equal to 255.  These left shifts will always be less than or equal to the number of right shifts we obtained from -1/255.  This means that the bit pattern we obtain from the left hand side before the right shift of 24 will not overflow.
+This takes the bits obtained from x&255 and shifts them to the left then when we multiply by -1/255 * (x&255) then we shift it back down to the right by right shifting by 24.  

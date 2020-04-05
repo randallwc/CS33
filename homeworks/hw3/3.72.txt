@@ -1,0 +1,53 @@
+pushq   %rbp			//push %rbp's value on stack
+movq    %rsp, %rbp		//point %rsp to %rbp
+subq    $16, %rsp		//%rsp + 16 = %rsp = s1
+leaq    30(,%rdi,8), %rax	//30 + 8*n = %rax
+andq    $-16, %rax		//(30 + 8*n) & (-16) = (30 + 8*n) & 0xFFFFFFF0 = %rax
+subq    %rax, %rsp		//s2 = s1 - %rax = s1 - (30 + 8*n) & 0xFFFFFFF0 = %rsp
+leaq    15(%rsp), %r8		//15 + %rsp = 15 + s1 - (30 + 8*n) & 0xFFFFFFF0 = %r8
+andq    $-16, %r8		//(0x0000000F + s1 - (30 + 8*n) & 0xFFFFFFF0) & 0xFFFFFFF0 = %r8 = p
+.
+.
+.
+
+A. Explain, in mathematical terms, the logic in the computation of s2.
+
+We find s1 is the value of %rsp at line 4(sub).
+We find that the new value of %rsp before we do the subtraction at line 7(subq 2nd) is
+(30 + 8*n) & 0xFFFFFFF0.  After we subtract %rax from %rsp we get s2. 
+
+s2 = s1 - (30 + 8*n) & 0xFFFFFFF0
+
+by anding with -16 it is like rounding down to the nearest multiple of 16.
+
+therefore if it is 
+odd:
+
+s2 = s1 - (24 + 8*n)
+
+even:
+
+s2 = s1 - (16 = 8*n)
+
+B. Explain, in mathematical terms, the logic in the computation of p.
+
+p = (s2 + 15) & -16
+p = (s2 + 0x0000000F) & 0xFFFFFFF0
+
+This gives the nearest multiple of 16 that is bigger than s2
+
+C. Find values of n and s1 that lead to minimum and maximum values of e1.
+
+for the minimum value of e1:
+
+n must be even and s1 must be 1
+
+for the max value of e1:
+
+n must be odd and s1 must be 0
+
+D. What alignment properties does this code guarantee for the values of s2 and p?
+
+s2 must be the rounded down number that is a multiple of 16 that the area of 8*n
+
+p must be aligned by 16

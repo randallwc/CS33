@@ -1,0 +1,55 @@
+(1) Explain what the machine instructions in f1 and f2 do, and 
+why GCC generated these differing sets of instructions. 
+(You need not explain the machine instructions in the fmatest function.)
+
+Both functions multiply the first two floating point numbers and add the result of that multiply
+to the third argument.  They both use the xmm registers which are 128 bits wide.  In f1 the function just uses
+the machine instruction vfmadd132ss which uses infinite precision when multiplying the first two 
+numbers so there is only a round at the end of the operation when the third argument is added.  
+This results in a number that is closer to the actual value because of this "infinite precision."
+Vfmadd132ss's name is "Fused Multiply-Add of Scalar Single-Precision Floating-Point Values" which
+sets %xmm1 equal to %xmm1 * %xmm0 + %xmm2.  In f2 the function uses two assembly instructions
+vmulss and vaddss.  Vmulss sets the register %xmm0 equal to %xmm0 * %xmm1 and then Vaddss sets
+the register %xmm0 equal to %xmm0 + %xmm2.  By separating the multiply and the add into two
+assembly instructions there is a rounding error between the multiply and the add in f2 but not 
+in f1.
+
+(2) Assuming the default rounding mode of round-to-nearest, give three finite 
+floating-point constants a, b and c such that 'fmatest (a, b, c)' 
+returns true, and explain why it returns true for these three arguments.
+
+float a = 3.4028235e38;
+float b = 2;
+float c = -3.4028235e38;
+
+This combination of three numbers makes famtest return true because it takes the biggest
+number representable by a single precision float and multiplies it by two then it 
+adds the negative of the same number to the result of the multiply.  The f1 function
+will return '340282346638528859811704183484516925440.000000' while the f2 will return inf 
+because the funciton f1 multiplies with infinite precision and then adds but the f2 function
+multiplies then stores the value inf then when you try to add anything to inf it returns inf,
+so the funcitons return different values of '340282346638528859811704183484516925440.000000' 
+and inf which makes fmatest true.
+
+//f1//
+  //source//
+float f1 (float a, float b, float c)
+{
+  return fmaf (a, b, c);
+}
+
+  //assembly//
+vfmadd132ss     %xmm1, %xmm2, %xmm0
+ret
+
+//f2//
+  //source//
+float f2 (float a, float b, float c)
+{
+  return a * b + c;
+}
+
+  //assembly
+vmulss  %xmm1, %xmm0, %xmm0
+vaddss  %xmm2, %xmm0, %xmm0
+ret

@@ -1,0 +1,39 @@
+A. The value of CNT.
+
+mov	0x120(%rsi),%ecx	//288 + bp = bp->last = %ecx
+				//288 is the location of bp->last
+add	(%rsi),%ecx		//bp->last + bp->first = n = %ecx
+lea     (%rdi,%rdi,4),%rax	//5*i = %rax
+lea     (%rsi,%rax,8),%rax	//bp + 5*8*i = bp + 40*i= %rax
+				//40*i means that elements of a[CNT] are 40 bytes long
+mov     0x8(%rax),%rdx		//bp + 40*i + 8 = %rdx
+				//add 8 at the end means that both bp->first and a[CNT] are aligned to 8 bytes
+                                //we can do 288 - 8 = 280 to get the length of the array a[CNT]
+                                //we can divide 280/40 = 7 to get CNT
+movslq  %ecx,%rcx		//sign extend n and put it in %rcx
+mov     %rcx,0x10(%rax,%rdx,8)	//16 + (bp + 40*i) + (bp + 40*i + 8)*8
+				//16 + (bp + 40*i) + ap * 8
+				//8 + (bp + 40*i + 8) + ap*8
+				//the 8 in the begining means that idx is declared before the array 
+				//and is a aligned to 8 bytes and is a long
+				//we know because to start iterating through the array it must hop 
+				//over idx before it iterates
+				//the 8 which is multiplied by ap means that the x array is also aligned to 8 bytes
+				//so x is also an array of longs
+retq				//return
+
+CNT = 7
+
+B. A complete declaration of structure a_struct. Assume that the only 
+fields in this structure are idx and x, and that both of these contain signed values.
+
+//x is an array of length 4 because an element of a_struct is 40 bytes
+//and idx is the starting declaration of 8 bytes
+//so 40 - 8 = 32
+//we know that elements of x are aligned to 8 so each element is a long
+//so 32/8 = 4 which gives us the ammount of elements in the array of x
+
+typedef struct {
+  long idx;
+  long x[4];
+} a_struct;
