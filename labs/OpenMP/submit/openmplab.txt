@@ -1,0 +1,168 @@
+Initially I ran
+
+$ make seq
+$ ./seq
+
+and got an output of 
+
+=====output=====
+FUNC TIME : 0.720349
+TOTAL TIME : 2.594784
+=====
+
+then I compiled it with gprof emabled
+
+$ make clean
+$ make seq GPROF=1
+$ gprof seq
+
+=====output=====
+...
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 68.13      0.66     0.66       15    44.06    48.52  func1
+ 11.87      0.78     0.12  5177344     0.00     0.00  rand2
+  4.65      0.82     0.05 67829762     0.00     0.00  round
+  4.13      0.86     0.04        1    40.05   133.34  addSeed
+  3.10      0.89     0.03   491520     0.00     0.00  findIndexBin
+  2.06      0.91     0.02        2    10.01    10.01  init
+  2.06      0.93     0.02                             sequence
+  1.03      0.94     0.01       15     0.67     0.67  func2
+  1.03      0.95     0.01        1    10.01    10.01  imdilateDisk
+  1.03      0.96     0.01                             filter
+  0.52      0.97     0.01       15     0.33     0.33  rand1
+  0.52      0.97     0.01        1     5.01     5.01  elapsed_time
+  0.00      0.97     0.00       16     0.00     0.00  dilateMatrix
+  0.00      0.97     0.00       15     0.00     0.00  func3
+  0.00      0.97     0.00       15     0.00     0.00  func4
+  0.00      0.97     0.00       15     0.00     2.00  func5
+  0.00      0.97     0.00        2     0.00     0.00  get_time
+  0.00      0.97     0.00        1     0.00     0.00  fillMatrix
+  0.00      0.97     0.00        1     0.00     0.00  func0
+  0.00      0.97     0.00        1     0.00     0.00  getNeighbors
+...
+=====
+
+From here I tried to parallelize the two loops in func1 and I set the number of threads to 30
+
+=====func.c=====
+...
+omp_set_num_threads(30);
+#pragma omp parallel for // parallelize this loop
+        for(i = 0; i < n; i++){
+...
+#pragma omp parallel for private(index_X, index_Y, j) // parallelize and make private the variables that are changing in each loop
+for(i = 0; i<n; i++){
+...
+=====
+
+$ make omp
+$ ./omp
+
+=====output=====
+FUNC TIME : 0.150401
+TOTAL TIME : 2.154717
+=====
+
+this is a speedup of 0.720349/0.150401 = 4.789522676 times!
+
+then I checked to see if the parallelization was making correct calculations with
+
+$ make check
+
+=====output=====
+gcc -o omp -O3 -fopenmp filter.c main.c func.c util.c -lm
+cp omp filter
+./filter
+FUNC TIME : 0.141345
+TOTAL TIME : 2.177933
+diff --brief correct.txt output.txt
+=====
+
+This means that the changes did not corrupt the output
+
+Now I moved to func2 and parallelized its loop with this and I went back and removed the 'omp_set_num_threads(30);' and moved this declaration into the
+part after #pragma omp parallel, as seen below.  This allows me to be able to compile it seq or omp without getting errors.
+
+=====func.c=====
+...
+#pragma omp parallel for num_threads(30)
+for(i = 0; i < n; i++)
+...
+#pragma omp parallel for num_threads(30) reduction(+: sumWeights)
+for(i = 0; i < n; i++)
+...
+#pragma omp parallel for num_threads(30)
+for(i = 0; i < n; i++)
+...
+=====
+
+I continued to do this for the loops that followed in func3, func4, func5
+
+=====func.c=====
+...
+#pragma omp parallel for num_threads(30) reduction(+: estimate_x, estimate_y) 
+for(i = 0; i < n; i++){
+...
+#pragma omp parallel for num_threads(30)
+for(i = 0; i < n; i++){
+...
+#pragma omp parallel for num_threads(30) private(i,j)
+for(j = 0; j < n; j++){
+...
+#pragma omp parallel for num_threads(30)
+for(i = 0; i < n; i++){
+...
+=====
+
+after these optimizations I decided to check the times again
+
+$ make clean
+$ make omp
+$ ./omp
+
+=====output=====/lnxsrv06/==currently high traffic
+FUNC TIME : 0.132925
+TOTAL TIME : 2.036742
+=====
+=====output=====/lnxsrv07/==mostlikely lower traffic
+FUNC TIME : 0.046093
+TOTAL TIME : 2.242991
+=====
+
+I also wanted to test if there were memory leaks so I did this on lnxsrv10
+
+$ make seq MTRACE=1
+$ ./seq
+$ make checkmem
+
+=====output=====
+mtrace filter mtrace.out || true
+env: ‘./filter’: No such file or directory
+No memory leaks.
+=====
+
+Now I compared the times on lnxsrv07 because 06 was high traffic
+
+for the time of the regular func.c compiled with
+
+$ make seq
+$ ./seq
+
+=====output=====lnxsrv07
+FUNC TIME : 0.606247
+TOTAL TIME : 2.781606
+=====
+
+I moved my file back in and tested it this way
+
+$ make clean
+$ make omp
+$ ./omp
+
+=====output=====lnxsrv07
+FUNC TIME : 0.043879
+TOTAL TIME : 2.111971
+=====
+
+so far this is an improvement of 0.606247/0.043879 = 13.81x!!
