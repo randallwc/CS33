@@ -7,10 +7,6 @@ Course objective: Understand how computer systems work, so that you can write be
 
 Instructor: Paul Eggert, Engineering VI 363. Office hours are Mondays 10:00–11:00 and Thursdays 09:30–10:30.
 
-Teaching assistant, with office hours announced on CCLE: Yugo Watanabe <yugowatanabe@cs.ucla.edu>.
-
-Lecture, 4 hours; discussion, 2 hours; outside study, 9 hours.
-
 Prerequisite: Computer Science 32.
 
 Introductory course on computer architecture, assembly language, and operating systems fundamentals.
