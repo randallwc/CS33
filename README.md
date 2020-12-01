@@ -46,7 +46,8 @@ Homework 3	9.6 / 100<br>
 Homework 4	9.8 / 100<br>
 Homework 5	9.6 / 100<br>
 
-Lab 1	33 / 33<br>
-Lab 2	100 / 100<br>
-Lab 3	96 / 100<br>
-Lab 4	100 / 100<br>
+Datalab	33 / 33<br>
+Pexex Lab	100 / 100<br>
+Smashing Lab	96 / 100<br>
+OpenMP lab	100 / 100<br>
+OpenMP Extra Credit	4 / 10<br>
