@@ -41,23 +41,23 @@ CE-CAO-10. Multi/Many-core architectures
 # Grades
 
 <h4>Homework 1</h4>
-8.64 / 100<br>
+8.64 / 100
 <h4>Homework 2</h4>
-10 / 100<br>
+10 / 100
 <h4>Homework 3</h4>
-9.6 / 100<br>
+9.6 / 100
 <h4>Homework 4</h4>
-9.8 / 100<br>
+9.8 / 100
 <h4>Homework 5</h4>
-9.6 / 100<br>
+9.6 / 100
 
 <h4>Datalab</h4>
-33 / 33<br>
+33 / 33
 <h4>Pexex Lab</h4>
-100 / 100<br>
+100 / 100
 <h4>Smashing Lab</h4>
-96 / 100<br>
+96 / 100
 <h4>OpenMP lab</h4>
-100 / 100<br>
+100 / 100
 <h4>OpenMP Extra Credit</h4>
-4 / 10<br>
+4 / 10
