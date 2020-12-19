@@ -39,7 +39,7 @@ $ mv src/thttpd src/thttpd-no
 (step 3)
 find the port numbers to use
 (12330 + 3 * (X % 293) + Y)
-X = 805167986
+X = MY_UID
 Y = 1,2,3
 sp = 12862
 as = 12863
